@@ -126,3 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MERDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file. YOu must be on production")
